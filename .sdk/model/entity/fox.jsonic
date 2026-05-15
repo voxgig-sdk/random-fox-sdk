@@ -1,0 +1,42 @@
+# Entity: fox
+
+main: kit: entity: fox: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "image"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "link"
+      req: true
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "fox"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          method: "GET"
+          orig: "/floof"
+          parts: [
+            "floof"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,24 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "xinitrc"
+        url: "https://randomfox.ca/"
+      }
+      description: "Shows a random fox. A simple API that returns random fox images."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://randomfox.ca"
+        }
+      ]
+      title: "Random Fox API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

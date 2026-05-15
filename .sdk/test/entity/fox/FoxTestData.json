@@ -1,0 +1,26 @@
+{
+  "existing": {
+    "fox": {
+      "FOX00": {
+        "image": "s14",
+        "link": "s15"
+      },
+      "FOX01": {
+        "image": "s28",
+        "link": "s29"
+      },
+      "FOX02": {
+        "image": "s3c",
+        "link": "s3d"
+      }
+    }
+  },
+  "new": {
+    "fox": {
+      "fox_ref01": {
+        "image": "s50",
+        "link": "s51"
+      }
+    }
+  }
+}

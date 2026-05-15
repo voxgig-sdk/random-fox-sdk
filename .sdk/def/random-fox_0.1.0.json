@@ -1,0 +1,70 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Random Fox API",
+    "description": "Shows a random fox. A simple API that returns random fox images.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "xinitrc",
+      "url": "https://randomfox.ca/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://randomfox.ca",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/floof": {
+      "get": {
+        "summary": "Get a random fox image",
+        "description": "Returns a random fox image URL and link from a collection of fox images.",
+        "operationId": "getRandomFox",
+        "tags": [
+          "Fox"
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with random fox image data",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "image": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "URL of the random fox image",
+                      "example": "https://randomfox.ca/images/1.jpg"
+                    },
+                    "link": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "Link to the fox image page",
+                      "example": "https://randomfox.ca/?i=1"
+                    }
+                  },
+                  "required": [
+                    "image",
+                    "link"
+                  ]
+                },
+                "example": {
+                  "image": "https://randomfox.ca/images/42.jpg",
+                  "link": "https://randomfox.ca/?i=42"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Fox",
+      "description": "Random fox image operations"
+    }
+  ]
+}
