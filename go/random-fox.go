@@ -1,10 +1,10 @@
 package voxgigrandomfoxsdk
 
 import (
-	"github.com/voxgig-sdk/random-fox-sdk/core"
-	"github.com/voxgig-sdk/random-fox-sdk/entity"
-	"github.com/voxgig-sdk/random-fox-sdk/feature"
-	_ "github.com/voxgig-sdk/random-fox-sdk/utility"
+	"github.com/voxgig-sdk/random-fox-sdk/go/core"
+	"github.com/voxgig-sdk/random-fox-sdk/go/entity"
+	"github.com/voxgig-sdk/random-fox-sdk/go/feature"
+	_ "github.com/voxgig-sdk/random-fox-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

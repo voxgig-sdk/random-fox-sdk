@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/random-fox-sdk/core"
+	"github.com/voxgig-sdk/random-fox-sdk/go/core"
 )
 
 type BaseFeature struct {

@@ -3,15 +3,18 @@
     "fox": {
       "FOX00": {
         "image": "s14",
-        "link": "s15"
+        "link": "s15",
+        "id": "FOX00"
       },
       "FOX01": {
         "image": "s28",
-        "link": "s29"
+        "link": "s29",
+        "id": "FOX01"
       },
       "FOX02": {
         "image": "s3c",
-        "link": "s3d"
+        "link": "s3d",
+        "id": "FOX02"
       }
     }
   },

@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/random-fox-sdk/core"
+	"github.com/voxgig-sdk/random-fox-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/random-fox-sdk/go/utility/struct"
 )
 
 type FoxEntity struct {

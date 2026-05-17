@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/random-fox-sdk"
-	"github.com/voxgig-sdk/random-fox-sdk/core"
+	sdk "github.com/voxgig-sdk/random-fox-sdk/go"
+	"github.com/voxgig-sdk/random-fox-sdk/go/core"
 )
 
 func TestFoxDirect(t *testing.T) {

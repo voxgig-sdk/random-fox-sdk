@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/random-fox-sdk/core"
+	"github.com/voxgig-sdk/random-fox-sdk/go/core"
 )
 
 type LogFeature struct {
