@@ -91,7 +91,6 @@ function fox_basic_setup(extra)
     ["RANDOMFOX_TEST_FOX_ENTID"] = idmap,
     ["RANDOMFOX_TEST_LIVE"] = "FALSE",
     ["RANDOMFOX_TEST_EXPLAIN"] = "FALSE",
-    ["RANDOMFOX_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -103,7 +102,6 @@ function fox_basic_setup(extra)
   if env["RANDOMFOX_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["RANDOMFOX_APIKEY"],
       },
       extra or {},
     })

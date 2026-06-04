@@ -31,9 +31,7 @@ loading a specific record.
 ```ruby
 require_relative "RandomFox_sdk"
 
-client = RandomFoxSDK.new({
-  "apikey" => ENV["RANDOM-FOX_APIKEY"],
-})
+client = RandomFoxSDK.new({})
 ```
 
 ### 3. Load a fox
@@ -121,7 +119,6 @@ Create a `.env.local` file at the project root:
 
 ```
 RANDOM-FOX_TEST_LIVE=TRUE
-RANDOM-FOX_APIKEY=<your-key>
 ```
 
 Then run:
@@ -144,7 +141,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `String` | API key for authentication. |
 | `base` | `String` | Base URL of the API server. |
 | `prefix` | `String` | URL path prefix prepended to all requests. |
 | `suffix` | `String` | URL path suffix appended to all requests. |

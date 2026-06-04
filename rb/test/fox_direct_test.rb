@@ -61,14 +61,12 @@ def fox_direct_setup(mockres)
   env = Runner.env_override({
     "RANDOMFOX_TEST_FOX_ENTID" => {},
     "RANDOMFOX_TEST_LIVE" => "FALSE",
-    "RANDOMFOX_APIKEY" => "NONE",
   })
 
   live = env["RANDOMFOX_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["RANDOMFOX_APIKEY"],
     }
     client = RandomFoxSDK.new(merged_opts)
     return {

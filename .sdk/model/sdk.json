@@ -17,7 +17,17 @@
           }
         ],
         "title": "Random Fox API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Get a random fox photo with a single GET request",
+        "homepage": "https://randomfox.ca",
+        "docs_url": "https://randomfox.ca",
+        "license_short": "No explicit license stated; check with the maintainer before reuse",
+        "license_md": "- The site does not publish an explicit licence for the images.\n- Photos are community-submitted (the maintainer accepts links only).\n- If you plan to redistribute the images, contact the maintainer first.\n- Attribution to [randomfox.ca](https://randomfox.ca) is a courteous default.",
+        "about_md": "Random Fox API is a tiny single-endpoint service that returns a random fox photograph. It is maintained by [xinitrc](https://randomfox.ca) and listed in the [Free Public APIs directory](https://freepublicapis.com/random-fox-api).\n\nWhat you get from the API:\n\n- A JSON response containing a URL to a JPG image of a fox.\n- A link to view the same image directly in the browser.\n- A single, unauthenticated `GET` call — no API key, no signup.\n\nOperational notes: CORS is enabled, so the endpoint can be called directly from browser code. The community catalogue lists average response time around 589 ms and reliability around 97%. No published rate limit; be polite.",
+        "entity_desc": {
+          "fox": "A random fox photograph resource served from `GET https://randomfox.ca/floof/`, returning a JSON object with the image URL and a viewable link."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -25,7 +35,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "fox": {

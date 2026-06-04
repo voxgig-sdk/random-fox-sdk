@@ -85,7 +85,6 @@ function fox_basic_setup($extra)
         "RANDOMFOX_TEST_FOX_ENTID" => $idmap,
         "RANDOMFOX_TEST_LIVE" => "FALSE",
         "RANDOMFOX_TEST_EXPLAIN" => "FALSE",
-        "RANDOMFOX_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,7 +96,6 @@ function fox_basic_setup($extra)
     if ($env["RANDOMFOX_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["RANDOMFOX_APIKEY"],
             ],
             $extra ?? [],
         ]);
