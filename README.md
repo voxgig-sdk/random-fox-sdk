@@ -1,20 +1,8 @@
 # RandomFox SDK
 
-Get a random fox photo with a single GET request
+Random Fox API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Random Fox API
-
-Random Fox API is a tiny single-endpoint service that returns a random fox photograph. It is maintained by [xinitrc](https://randomfox.ca) and listed in the [Free Public APIs directory](https://freepublicapis.com/random-fox-api).
-
-What you get from the API:
-
-- A JSON response containing a URL to a JPG image of a fox.
-- A link to view the same image directly in the browser.
-- A single, unauthenticated `GET` call — no API key, no signup.
-
-Operational notes: CORS is enabled, so the endpoint can be called directly from browser code. The community catalogue lists average response time around 589 ms and reliability around 97%. No published rate limit; be polite.
 
 ## Try it
 
@@ -48,27 +36,31 @@ gem install random-fox-sdk
 luarocks install random-fox-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { RandomFoxSDK } from 'random-fox'
 
-const client = new RandomFoxSDK({})
+const client = new RandomFoxSDK({
+  apikey: process.env.RANDOM-FOX_APIKEY,
+})
 
+// Load fox data
+const fox = await client.Fox().load({})
+console.log(fox.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -98,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Fox** | A random fox photograph resource served from `GET https://randomfox.ca/floof/`, returning a JSON object with the image URL and a viewable link. | `/floof` |
+| **Fox** |  | `/floof` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -108,15 +100,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from randomfox_sdk import RandomFoxSDK
 
-client = RandomFoxSDK({})
+client = RandomFoxSDK({
+    "apikey": os.environ.get("RANDOM-FOX_APIKEY"),
+})
 
 
 # Load a specific fox
-fox, err = client.Fox(None).load(
-    {"id": "example_id"}, None
-)
+fox, err = client.Fox().load({"id": "example_id"})
+print(fox)
 ```
 
 ### PHP
@@ -125,13 +119,14 @@ fox, err = client.Fox(None).load(
 <?php
 require_once 'randomfox_sdk.php';
 
-$client = new RandomFoxSDK([]);
+$client = new RandomFoxSDK([
+    "apikey" => getenv("RANDOM-FOX_APIKEY"),
+]);
 
 
 // Load a specific fox
-[$fox, $err] = $client->Fox(null)->load(
-    ["id" => "example_id"], null
-);
+[$fox, $err] = $client->Fox()->load(["id" => "example_id"]);
+print_r($fox);
 ```
 
 ### Golang
@@ -139,8 +134,13 @@ $client = new RandomFoxSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/random-fox-sdk/go"
 
-client := sdk.NewRandomFoxSDK(map[string]any{})
+client := sdk.NewRandomFoxSDK(map[string]any{
+    "apikey": os.Getenv("RANDOM-FOX_APIKEY"),
+})
 
+// Load fox data
+fox, err := client.Fox(nil).Load(map[string]any{}, nil)
+fmt.Println(fox)
 ```
 
 ### Ruby
@@ -148,13 +148,14 @@ client := sdk.NewRandomFoxSDK(map[string]any{})
 ```ruby
 require_relative "RandomFox_sdk"
 
-client = RandomFoxSDK.new({})
+client = RandomFoxSDK.new({
+  "apikey" => ENV["RANDOM-FOX_APIKEY"],
+})
 
 
 # Load a specific fox
-fox, err = client.Fox(nil).load(
-  { "id" => "example_id" }, nil
-)
+fox, err = client.Fox().load({ "id" => "example_id" })
+puts fox
 ```
 
 ### Lua
@@ -162,13 +163,14 @@ fox, err = client.Fox(nil).load(
 ```lua
 local sdk = require("random-fox_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("RANDOM-FOX_APIKEY"),
+})
 
 
 -- Load a specific fox
-local fox, err = client:Fox(nil):load(
-  { id = "example_id" }, nil
-)
+local fox, err = client:Fox():load({ id = "example_id" })
+print(fox)
 ```
 
 ## Unit testing in offline mode
@@ -187,25 +189,21 @@ const result = await client.Fox().load({ id: 'test01' })
 ### Python
 
 ```python
-client = RandomFoxSDK.test(None, None)
-result, err = client.Fox(None).load(
-    {"id": "test01"}, None
-)
+client = RandomFoxSDK.test()
+result, err = client.Fox().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = RandomFoxSDK::test(null, null);
-[$result, $err] = $client->Fox(null)->load(
-    ["id" => "test01"], null
-);
+$client = RandomFoxSDK::test();
+[$result, $err] = $client->Fox()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Fox(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -214,19 +212,15 @@ result, err := client.Fox(nil).Load(
 ### Ruby
 
 ```ruby
-client = RandomFoxSDK.test(nil, nil)
-result, err = client.Fox(nil).load(
-  { "id" => "test01" }, nil
-)
+client = RandomFoxSDK.test
+result, err = client.Fox().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Fox(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Fox():load({ id = "test01" })
 ```
 
 ## How it works
@@ -330,15 +324,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Random Fox API
-
-- Upstream: [https://randomfox.ca](https://randomfox.ca)
-
-- The site does not publish an explicit licence for the images.
-- Photos are community-submitted (the maintainer accepts links only).
-- If you plan to redistribute the images, contact the maintainer first.
-- Attribution to [randomfox.ca](https://randomfox.ca) is a courteous default.
 
 ---
 

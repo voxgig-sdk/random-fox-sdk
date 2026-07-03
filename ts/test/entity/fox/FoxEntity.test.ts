@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'RANDOM_FOX_TEST_FOX_ENTID': idmap,
     'RANDOM_FOX_TEST_LIVE': 'FALSE',
     'RANDOM_FOX_TEST_EXPLAIN': 'FALSE',
+    'RANDOM_FOX_APIKEY': 'NONE',
   })
 
   idmap = env['RANDOM_FOX_TEST_FOX_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new RandomFoxSDK(merge([
       {
+        apikey: env.RANDOM_FOX_APIKEY,
       },
       extra
     ]))
