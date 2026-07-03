@@ -10,7 +10,7 @@ The PHP SDK for the RandomFox API — an entity-oriented client using PHP conven
 
 ## Install
 ```bash
-composer require voxgig/random-fox-sdk
+composer require voxgig-sdk/random-fox
 ```
 
 

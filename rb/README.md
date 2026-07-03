@@ -10,13 +10,13 @@ The Ruby SDK for the RandomFox API — an entity-oriented client using idiomatic
 
 ## Install
 ```bash
-gem install random-fox-sdk
+gem install voxgig-sdk-random-fox
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "random-fox-sdk"
+gem "voxgig-sdk-random-fox"
 ```
 
 Then run:

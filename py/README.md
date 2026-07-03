@@ -10,7 +10,7 @@ The Python SDK for the RandomFox API — an entity-oriented client following Pyt
 
 ## Install
 ```bash
-pip install random-fox-sdk
+pip install voxgig-sdk-random-fox
 ```
 
 Or install from source:

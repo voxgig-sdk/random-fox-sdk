@@ -10,7 +10,7 @@ The TypeScript SDK for the RandomFox API — a type-safe, entity-oriented client
 
 ## Install
 ```bash
-npm install random-fox
+npm install @voxgig-sdk/random-fox
 ```
 ## Tutorial: your first API call
 

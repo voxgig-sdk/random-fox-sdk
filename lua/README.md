@@ -10,7 +10,7 @@ The Lua SDK for the RandomFox API — an entity-oriented client using Lua conven
 
 ## Install
 ```bash
-luarocks install random-fox-sdk
+luarocks install voxgig-sdk-random-fox
 ```
 
 If the module is not yet published, add the source directory to
