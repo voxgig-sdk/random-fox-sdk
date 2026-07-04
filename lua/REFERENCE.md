@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## FoxEntity
 
 ```lua
-local fox = client:fox(nil)
+local fox = client:Fox(nil)
 ```
 
 ### Fields
@@ -100,7 +100,7 @@ local fox = client:fox(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:fox():load({ id = "fox_id" })
+local result, err = client:Fox():load({ id = "fox_id" })
 ```
 
 ### Common Methods

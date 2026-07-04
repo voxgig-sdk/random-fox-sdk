@@ -220,25 +220,15 @@ class RandomFoxSDK:
         }
 
 
-    @property
-    def fox(self):
-        """Idiomatic facade: client.fox.list() / client.fox.load({"id": ...})."""
-        from entity.fox_entity import FoxEntity
-        cached = getattr(self, "_fox", None)
-        if cached is None:
-            cached = FoxEntity(self, None)
-            self._fox = cached
-        return cached
-
-    def Fox(self, data=None):
-        # Deprecated: use client.fox instead.
+    def Fox(self, data=None) -> "FoxEntity":
+        """Entity factory: client.Fox().list({}) / client.Fox().load({"id": ...})."""
         from entity.fox_entity import FoxEntity
         return FoxEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "RandomFoxSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class RandomFoxSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.fox_entity import FoxEntity

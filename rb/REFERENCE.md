@@ -86,7 +86,7 @@ same parameters as `direct()`. Raises on error.
 ## FoxEntity
 
 ```ruby
-fox = client.fox
+fox = client.Fox
 ```
 
 ### Fields
@@ -103,7 +103,7 @@ fox = client.fox
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.fox.load({ "id" => "fox_id" })
+result = client.Fox.load({ "id" => "fox_id" })
 ```
 
 ### Common Methods

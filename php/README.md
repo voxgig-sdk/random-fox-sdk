@@ -33,9 +33,10 @@ $client = new RandomFoxSDK();
 
 ```php
 try {
-    $result = $client->fox()->load(["id" => "example_id"]);
-    print_r($result);
-} catch (\Exception $err) {
+    // load() returns the bare Fox record (throws on error).
+    $fox = $client->Fox()->load(["id" => "example_id"]);
+    print_r($fox);
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -81,13 +82,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = RandomFoxSDK::test();
+$client = RandomFoxSDK::test([
+    "entity" => ["fox" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->fox()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$fox = $client->Fox()->load(["id" => "test01"]);
+print_r($fox);
 ```
 
 ### Use a custom fetch function
@@ -224,7 +229,7 @@ API path: `/floof`
 
 ### Fox
 
-Create an instance: `const fox = client.fox`
+Create an instance: `$fox = $client->Fox();`
 
 #### Operations
 
@@ -241,8 +246,9 @@ Create an instance: `const fox = client.fox`
 
 #### Example: Load
 
-```ts
-const fox = await client.fox.load({ id: 'fox_id' })
+```php
+// load() returns the bare Fox record (throws on error).
+$fox = $client->Fox()->load(["id" => "fox_id"]);
 ```
 
 
@@ -317,7 +323,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$fox = $client->fox();
+$fox = $client->Fox();
 $fox->load(["id" => "example_id"]);
 
 // $fox->dataGet() now returns the loaded fox data

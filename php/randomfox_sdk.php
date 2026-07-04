@@ -233,10 +233,10 @@ class RandomFoxSDK
 
     private $_fox = null;
 
-    // Idiomatic facade: $client->fox()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Fox() (PHP method
-    // names are case-insensitive).
-    public function fox($data = null)
+    // Canonical facade: $client->Fox()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->fox()
+    // resolves here too.
+    public function Fox($data = null)
     {
         require_once __DIR__ . '/entity/fox_entity.php';
         if ($data === null) {

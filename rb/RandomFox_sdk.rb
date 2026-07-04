@@ -208,13 +208,7 @@ class RandomFoxSDK
   end
 
 
-  # Idiomatic facade: client.fox.list / client.fox.load({ "id" => ... })
-  def fox
-    require_relative 'entity/fox_entity'
-    @fox ||= FoxEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.fox instead.
+  # Canonical facade: client.Fox.list / client.Fox.load({ "id" => ... })
   def Fox(data = nil)
     require_relative 'entity/fox_entity'
     FoxEntity.new(self, data)

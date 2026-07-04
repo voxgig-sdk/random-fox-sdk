@@ -204,14 +204,7 @@ class RandomFoxSDK {
 
 
 
-  _fox?: FoxEntity
-
-  // Idiomatic facade: `client.fox.list()` / `client.fox.load({ id })`.
-  get fox(): FoxEntity {
-    return (this._fox ??= new FoxEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.fox` instead. */
+  // Entity access: `client.Fox().list()` / `client.Fox().load({ id })`.
   Fox(data?: any) {
     const self = this
     return new FoxEntity(self,data)

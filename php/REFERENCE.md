@@ -85,7 +85,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## FoxEntity
 
 ```php
-$fox = $client->fox();
+$fox = $client->Fox();
 ```
 
 ### Fields
@@ -102,7 +102,7 @@ $fox = $client->fox();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->fox()->load(["id" => "fox_id"]);
+$result = $client->Fox()->load(["id" => "fox_id"]);
 ```
 
 ### Common Methods

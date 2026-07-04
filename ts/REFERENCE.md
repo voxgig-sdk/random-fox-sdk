@@ -109,7 +109,7 @@ Alias for `RandomFoxSDK.test()`.
 ## FoxEntity
 
 ```ts
-const fox = client.fox
+const fox = client.Fox()
 ```
 
 ### Fields
@@ -126,7 +126,7 @@ const fox = client.fox
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.fox.load({ id: 'fox_id' })
+const result = await client.Fox().load({ id: 'fox_id' })
 ```
 
 ### Common Methods

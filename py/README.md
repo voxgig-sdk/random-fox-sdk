@@ -33,10 +33,12 @@ client = RandomFoxSDK()
 
 ### 3. Load a fox
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.fox.load({"id": "example_id"})
-    print(result)
+    fox = client.Fox().load({"id": "example_id"})
+    print(fox)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = RandomFoxSDK.test()
 
-result = client.fox.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+fox = client.Fox().load({"id": "test01"})
+# fox contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -219,7 +222,7 @@ API path: `/floof`
 
 ### Fox
 
-Create an instance: `const fox = client.fox`
+Create an instance: `fox = client.Fox()`
 
 #### Operations
 
@@ -236,8 +239,8 @@ Create an instance: `const fox = client.fox`
 
 #### Example: Load
 
-```ts
-const fox = await client.fox.load({ id: 'fox_id' })
+```python
+fox = client.Fox().load({"id": "fox_id"})
 ```
 
 
@@ -311,7 +314,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-fox = client.fox
+fox = client.Fox()
 fox.load({"id": "example_id"})
 
 # fox.data_get() now returns the loaded fox data

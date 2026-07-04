@@ -26,9 +26,9 @@ import { RandomFoxSDK } from '@voxgig-sdk/random-fox'
 
 const client = new RandomFoxSDK()
 
-// Load fox data
-const fox = await client.fox.load({})
-console.log(fox.data)
+// Load fox data (returns a Fox)
+const fox = await client.Fox().load()
+console.log(fox)
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,8 +84,8 @@ from randomfox_sdk import RandomFoxSDK
 client = RandomFoxSDK()
 
 
-# Load a specific fox
-fox = client.fox.load({"id": "example_id"})
+# Load a specific fox (returns the record, raises on error)
+fox = client.Fox().load({"id": "example_id"})
 print(fox)
 ```
 
@@ -98,8 +98,8 @@ require_once 'randomfox_sdk.php';
 $client = new RandomFoxSDK();
 
 
-// Load a specific fox
-$fox = $client->fox()->load(["id" => "example_id"]);
+// Load a specific fox (returns the bare record; throws on error)
+$fox = $client->Fox()->load(["id" => "example_id"]);
 print_r($fox);
 ```
 
@@ -123,8 +123,8 @@ require_relative "RandomFox_sdk"
 client = RandomFoxSDK.new
 
 
-# Load a specific fox
-fox = client.fox.load({ "id" => "example_id" })
+# Load a specific fox (returns the bare record; raises on error)
+fox = client.Fox.load({ "id" => "example_id" })
 puts fox
 ```
 
@@ -137,7 +137,7 @@ local client = sdk.new()
 
 
 -- Load a specific fox
-local fox, err = client:fox():load({ id = "example_id" })
+local fox, err = client:Fox():load({ id = "example_id" })
 print(fox)
 ```
 
@@ -150,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = RandomFoxSDK.test()
-const result = await client.fox.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const fox = await client.Fox().load({ id: 'test01' })
+// fox is a bare Fox populated with mock data
+console.log(fox)
 ```
 
 ### Python
 
 ```python
 client = RandomFoxSDK.test()
-result = client.fox.load({"id": "test01"})
+fox = client.Fox().load({"id": "test01"})
+print(fox)
 ```
 
 ### PHP
 
 ```php
-$client = RandomFoxSDK::test();
-$result = $client->fox()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = RandomFoxSDK::test([
+    "entity" => ["fox" => ["test01" => ["id" => "test01"]]],
+]);
+$fox = $client->Fox()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -180,15 +185,18 @@ result, err := client.Fox(nil).Load(
 ### Ruby
 
 ```ruby
-client = RandomFoxSDK.test
-result = client.fox.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = RandomFoxSDK.test({
+  "entity" => { "fox" => { "test01" => { "id" => "test01" } } },
+})
+fox = client.Fox.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:fox():load({ id = "test01" })
+local result, err = client:Fox():load({ id = "test01" })
 ```
 
 ## How it works
@@ -236,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 
