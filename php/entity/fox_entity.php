@@ -55,6 +55,9 @@ class FoxEntity
         return new FoxEntity($this->_client, $opts);
     }
 
+    /**
+     * @param Fox|array $args Fox data (assoc-array) to store.
+     */
     public function data_set($args): void
     {
         if ($args) {
@@ -63,12 +66,18 @@ class FoxEntity
         }
     }
 
+    /**
+     * @return Fox|array The current Fox data as an assoc-array.
+     */
     public function data_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetData");
         return Struct::clone($this->_data);
     }
 
+    /**
+     * @param array $args Match filter (any subset of Fox fields).
+     */
     public function match_set($args): void
     {
         if ($args) {
@@ -77,6 +86,9 @@ class FoxEntity
         }
     }
 
+    /**
+     * @return array The current match filter (any subset of Fox fields).
+     */
     public function match_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetMatch");
@@ -84,7 +96,16 @@ class FoxEntity
     }
 
     
-    public function load($reqmatch, $ctrl = null): array
+    /**
+     * Load a single Fox.
+     *
+     * @param FoxLoadMatch|array|null $reqmatch Match criteria (id/query
+     *   fields) as an assoc-array; a typed FoxLoadMatch names the shape.
+     * @param mixed $ctrl Optional per-call control overrides.
+     * @return Fox|array The loaded Fox as an assoc-array at the
+     *   SDK boundary; throws RandomFoxError on failure (item-5 convention).
+     */
+    public function load(?array $reqmatch = null, $ctrl = null): mixed
     {
         $utility = $this->_utility;
         $ctx = ($utility->make_context)([
@@ -117,7 +138,7 @@ class FoxEntity
 
     
 
-    private function _run_op($ctx, callable $post_done): array
+    private function _run_op($ctx, callable $post_done): mixed
     {
         $utility = $this->_utility;
 

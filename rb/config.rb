@@ -15,9 +15,6 @@ module RandomFoxConfig
       },
       "options" => {
         "base" => "https://randomfox.ca",
-        "auth" => {
-          "prefix" => "Bearer",
-        },
         "headers" => {
           "content-type" => "application/json",
         },

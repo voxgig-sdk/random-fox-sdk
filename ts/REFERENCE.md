@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -110,7 +109,7 @@ Alias for `RandomFoxSDK.test()`.
 ## FoxEntity
 
 ```ts
-const fox = client.Fox()
+const fox = client.fox
 ```
 
 ### Fields
@@ -127,7 +126,7 @@ const fox = client.Fox()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Fox().load({ id: 'fox_id' })
+const result = await client.fox.load({ id: 'fox_id' })
 ```
 
 ### Common Methods

@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Fox,
+  FoxLoadMatch,
+} from '../RandomFoxTypes'
 
 // TODO: needs Entity superclass
-class FoxEntity extends RandomFoxEntityBase {
+class FoxEntity extends RandomFoxEntityBase<Fox> {
 
   constructor(client: RandomFoxSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class FoxEntity extends RandomFoxEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: FoxLoadMatch, ctrl?: Control): Promise<Fox> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class FoxEntity extends RandomFoxEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Fox> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

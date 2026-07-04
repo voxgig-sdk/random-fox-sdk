@@ -2,6 +2,8 @@
 
 import { FoxEntity } from './entity/FoxEntity'
 
+export type * from './RandomFoxTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class RandomFoxSDK {
 
 
 
+  _fox?: FoxEntity
+
+  // Idiomatic facade: `client.fox.list()` / `client.fox.load({ id })`.
+  get fox(): FoxEntity {
+    return (this._fox ??= new FoxEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.fox` instead. */
   Fox(data?: any) {
     const self = this
     return new FoxEntity(self,data)

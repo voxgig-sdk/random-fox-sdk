@@ -117,7 +117,6 @@ func foxBasicSetup(extra map[string]any) *entityTestSetup {
 		"RANDOMFOX_TEST_FOX_ENTID": idmap,
 		"RANDOMFOX_TEST_LIVE":      "FALSE",
 		"RANDOMFOX_TEST_EXPLAIN":   "FALSE",
-		"RANDOMFOX_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["RANDOMFOX_TEST_FOX_ENTID"])
@@ -128,7 +127,6 @@ func foxBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["RANDOMFOX_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
-				"apikey": env["RANDOMFOX_APIKEY"],
 			},
 			extra,
 		})

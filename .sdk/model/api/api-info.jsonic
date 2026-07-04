@@ -4,6 +4,7 @@
 main: {
   kit: {
     info: {
+      auth: false
       contact: {
         name: "xinitrc"
         url: "https://randomfox.ca/"

@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:fox():list() / client:fox():load({ id = ... })
+function RandomFoxSDK:fox(data)
+  local EntityMod = require("entity.fox_entity")
+  if data == nil then
+    if self._fox == nil then
+      self._fox = EntityMod.new(self, nil)
+    end
+    return self._fox
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:fox() instead.
 function RandomFoxSDK:Fox(data)
   local EntityMod = require("entity.fox_entity")
   return EntityMod.new(self, data)

@@ -245,6 +245,9 @@ func (sdk *RandomFoxSDK) Direct(fetchargs map[string]any) (map[string]any, error
 }
 
 
+// Fox returns a Fox entity bound to this client.
+// Idiomatic usage: client.Fox(nil).List(nil, nil) or
+// client.Fox(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *RandomFoxSDK) Fox(data map[string]any) RandomFoxEntity {
 	return NewFoxEntityFunc(sdk, data)
 }

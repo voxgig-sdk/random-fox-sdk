@@ -99,14 +99,12 @@ func foxDirectSetup(mockres any) *foxDirectSetupResult {
 	env := envOverride(map[string]any{
 		"RANDOMFOX_TEST_FOX_ENTID": map[string]any{},
 		"RANDOMFOX_TEST_LIVE":    "FALSE",
-		"RANDOMFOX_APIKEY":       "NONE",
 	})
 
 	live := env["RANDOMFOX_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["RANDOMFOX_APIKEY"],
 		}
 		client := sdk.NewRandomFoxSDK(mergedOpts)
 

@@ -42,8 +42,7 @@ class FoxEntityTest < Minitest::Test
     # LOAD
     fox_ref01_ent = client.Fox(nil)
     fox_ref01_match_dt0 = {}
-    fox_ref01_data_dt0_loaded, err = fox_ref01_ent.load(fox_ref01_match_dt0, nil)
-    assert_nil err
+    fox_ref01_data_dt0_loaded = fox_ref01_ent.load(fox_ref01_match_dt0, nil)
     assert !fox_ref01_data_dt0_loaded.nil?
 
   end
@@ -82,7 +81,6 @@ def fox_basic_setup(extra)
     "RANDOMFOX_TEST_FOX_ENTID" => idmap,
     "RANDOMFOX_TEST_LIVE" => "FALSE",
     "RANDOMFOX_TEST_EXPLAIN" => "FALSE",
-    "RANDOMFOX_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -94,7 +92,6 @@ def fox_basic_setup(extra)
   if env["RANDOMFOX_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["RANDOMFOX_APIKEY"],
       },
       extra || {},
     ])

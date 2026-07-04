@@ -79,6 +79,10 @@ end
 
 
 
+---@param reqmatch FoxLoadMatch
+---@param ctrl? table
+---@return Fox
+---@return string? err
 function FoxEntity:load(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

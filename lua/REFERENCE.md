@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -84,7 +83,7 @@ same parameters as `direct()`.
 ## FoxEntity
 
 ```lua
-local fox = client:Fox(nil)
+local fox = client:fox(nil)
 ```
 
 ### Fields
@@ -101,7 +100,7 @@ local fox = client:Fox(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Fox():load({ id = "fox_id" })
+local result, err = client:fox():load({ id = "fox_id" })
 ```
 
 ### Common Methods
