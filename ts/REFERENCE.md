@@ -116,8 +116,8 @@ const fox = client.Fox()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `image` | ``$STRING`` | Yes |  |
-| `link` | ``$STRING`` | Yes |  |
+| `image` | `string` | Yes |  |
+| `link` | `string` | Yes |  |
 
 ### Operations
 
@@ -126,7 +126,7 @@ const fox = client.Fox()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Fox().load({ id: 'fox_id' })
+const result = await client.Fox().load()
 ```
 
 ### Common Methods

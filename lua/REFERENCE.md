@@ -90,8 +90,8 @@ local fox = client:Fox(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `image` | ``$STRING`` | Yes |  |
-| `link` | ``$STRING`` | Yes |  |
+| `image` | `string` | Yes |  |
+| `link` | `string` | Yes |  |
 
 ### Operations
 
@@ -100,7 +100,7 @@ local fox = client:Fox(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Fox():load({ id = "fox_id" })
+local result, err = client:Fox():load()
 ```
 
 ### Common Methods

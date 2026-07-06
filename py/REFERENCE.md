@@ -8,7 +8,7 @@ Complete API reference for the RandomFox Python SDK.
 ### Constructor
 
 ```python
-from random-fox_sdk import RandomFoxSDK
+from randomfox_sdk import RandomFoxSDK
 
 client = RandomFoxSDK(options)
 ```
@@ -87,8 +87,8 @@ fox = client.Fox()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `image` | ``$STRING`` | Yes |  |
-| `link` | ``$STRING`` | Yes |  |
+| `image` | `str` | Yes |  |
+| `link` | `str` | Yes |  |
 
 ### Operations
 
@@ -97,7 +97,7 @@ fox = client.Fox()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Fox().load({"id": "fox_id"})
+result = client.Fox().load()
 ```
 
 ### Common Methods

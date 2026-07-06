@@ -10,5 +10,8 @@ export interface Fox {
   link: string
 }
 
-export type FoxLoadMatch = Partial<Fox>
+export interface FoxLoadMatch {
+  image?: string
+  link?: string
+}
 

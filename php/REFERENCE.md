@@ -8,7 +8,7 @@ Complete API reference for the RandomFox PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/random-fox_sdk.php';
+require_once __DIR__ . '/randomfox_sdk.php';
 
 $client = new RandomFoxSDK($options);
 ```
@@ -45,11 +45,11 @@ $client = RandomFoxSDK::test();
 
 Create a new `FoxEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): RandomFoxUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,8 +92,8 @@ $fox = $client->Fox();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `image` | ``$STRING`` | Yes |  |
-| `link` | ``$STRING`` | Yes |  |
+| `image` | `string` | Yes |  |
+| `link` | `string` | Yes |  |
 
 ### Operations
 
@@ -102,24 +102,24 @@ $fox = $client->Fox();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Fox()->load(["id" => "fox_id"]);
+$result = $client->Fox()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -128,7 +128,7 @@ Set the entity match criteria.
 Create a new `FoxEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

@@ -8,7 +8,7 @@ Complete API reference for the RandomFox Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'random-fox_sdk'
+require_relative 'RandomFox_sdk'
 
 client = RandomFoxSDK.new(options)
 ```
@@ -93,8 +93,8 @@ fox = client.Fox
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `image` | ``$STRING`` | Yes |  |
-| `link` | ``$STRING`` | Yes |  |
+| `image` | `String` | Yes |  |
+| `link` | `String` | Yes |  |
 
 ### Operations
 
@@ -103,7 +103,7 @@ fox = client.Fox
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Fox.load({ "id" => "fox_id" })
+result = client.Fox.load()
 ```
 
 ### Common Methods

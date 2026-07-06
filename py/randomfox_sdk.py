@@ -221,7 +221,7 @@ class RandomFoxSDK:
 
 
     def Fox(self, data=None) -> "FoxEntity":
-        """Entity factory: client.Fox().list({}) / client.Fox().load({"id": ...})."""
+        """Entity factory: client.Fox().list() / client.Fox().load({"id": ...})."""
         from entity.fox_entity import FoxEntity
         return FoxEntity(self, data)
 

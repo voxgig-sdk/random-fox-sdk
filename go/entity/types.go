@@ -14,8 +14,7 @@ type Fox struct {
 	Link string `json:"link"`
 }
 
-// FoxLoadMatch mirrors the fox fields as an all-optional match
-// filter (Go analog of Partial<Fox>).
+// FoxLoadMatch is the typed request payload for Fox.LoadTyped.
 type FoxLoadMatch struct {
 	Image *string `json:"image,omitempty"`
 	Link *string `json:"link,omitempty"`

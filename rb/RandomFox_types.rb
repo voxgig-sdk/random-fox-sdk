@@ -21,7 +21,7 @@ Fox = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Fox#load (any subset of Fox fields).
+# Request payload for Fox#load.
 #
 # @!attribute [rw] image
 #   @return [String, nil]

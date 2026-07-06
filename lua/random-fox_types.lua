@@ -11,6 +11,8 @@
 ---@field link string
 
 ---@class FoxLoadMatch
+---@field image? string
+---@field link? string
 
 local M = {}
 

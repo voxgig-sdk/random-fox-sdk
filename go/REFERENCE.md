@@ -97,8 +97,8 @@ fox := client.Fox(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `image` | ``$STRING`` | Yes |  |
-| `link` | ``$STRING`` | Yes |  |
+| `image` | `string` | Yes |  |
+| `link` | `string` | Yes |  |
 
 ### Operations
 
@@ -107,7 +107,7 @@ fox := client.Fox(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Fox(nil).Load(map[string]any{"id": "fox_id"}, nil)
+result, err := client.Fox(nil).Load(nil, nil)
 ```
 
 ### Common Methods

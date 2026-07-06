@@ -19,7 +19,7 @@ class Fox
     public string $link;
 }
 
-/** Match filter for Fox#load (any subset of Fox fields). */
+/** Request payload for Fox#load. */
 class FoxLoadMatch
 {
     public ?string $image = null;
