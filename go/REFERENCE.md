@@ -91,6 +91,7 @@ same parameters as `Direct()`.
 
 ```go
 fox := client.Fox(nil)
+fmt.Println(fox.GetName()) // "fox"
 ```
 
 ### Fields
@@ -108,6 +109,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Fox(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

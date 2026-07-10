@@ -16,9 +16,9 @@ main: {
           url: "https://randomfox.ca"
         }
       ]
+      summary: "Shows a random fox."
       title: "Random Fox API"
       version: "1.0.0"
+      website: "https://randomfox.ca"
     }
   }
-}
-
