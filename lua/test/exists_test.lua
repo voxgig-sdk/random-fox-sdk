@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- RandomFox SDK exists test
 
 local sdk = require("random-fox_sdk")
 
