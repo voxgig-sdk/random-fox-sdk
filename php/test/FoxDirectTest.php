@@ -65,11 +65,11 @@ function fox_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "RANDOMFOX_TEST_FOX_ENTID" => [],
-        "RANDOMFOX_TEST_LIVE" => "FALSE",
+        "RANDOM_FOX_TEST_FOX_ENTID" => [],
+        "RANDOM_FOX_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["RANDOMFOX_TEST_LIVE"] === "TRUE";
+    $live = $env["RANDOM_FOX_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

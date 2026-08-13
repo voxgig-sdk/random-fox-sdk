@@ -16,11 +16,11 @@
 import pytest
 
 from randomfox_sdk import RandomFoxSDK
-from core.error import RandomFoxError
-from core.result import RandomFoxResult
-from core.response import RandomFoxResponse
-from core.spec import RandomFoxSpec
-from feature.base_feature import RandomFoxBaseFeature
+from randomfox_sdk.core.error import RandomFoxError
+from randomfox_sdk.core.result import RandomFoxResult
+from randomfox_sdk.core.response import RandomFoxResponse
+from randomfox_sdk.core.spec import RandomFoxSpec
+from randomfox_sdk.feature.base_feature import RandomFoxBaseFeature
 
 
 def _client():

@@ -49,6 +49,7 @@ module RandomFoxConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/floof",
                   "parts" => [

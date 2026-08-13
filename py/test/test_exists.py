@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# RandomFox SDK exists test
 
 import pytest
 from randomfox_sdk import RandomFoxSDK

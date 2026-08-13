@@ -26,8 +26,8 @@ import {
 describe('FoxEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when RANDOMFOX_TEST_LIVE=TRUE.
-  afterEach(liveDelay('RANDOMFOX_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when RANDOM_FOX_TEST_LIVE=TRUE.
+  afterEach(liveDelay('RANDOM_FOX_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = RandomFoxSDK.test()
@@ -62,7 +62,7 @@ describe('FoxEntity', async () => {
     // LOAD
     const fox_ref01_ent = client.Fox()
     const fox_ref01_match_dt0: any = {}
-    const fox_ref01_data_dt0 = await fox_ref01_ent.load(fox_ref01_match_dt0)
+    const fox_ref01_data_dt0 = (await fox_ref01_ent.load(fox_ref01_match_dt0)).data()
     assert(null != fox_ref01_data_dt0)
 
 

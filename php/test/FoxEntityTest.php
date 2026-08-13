@@ -33,7 +33,7 @@ class FoxEntityTest extends TestCase
         // The basic flow consumes synthetic IDs from the fixture. In live mode
         // without an *_ENTID env override, those IDs hit the live API and 4xx.
         if (!empty($setup["synthetic_only"])) {
-            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set RANDOMFOX_TEST_FOX_ENTID JSON to run live");
+            $this->markTestSkipped("live entity test uses synthetic IDs from fixture — set RANDOM_FOX_TEST_FOX_ENTID JSON to run live");
             return;
         }
         $client = $setup["client"];
@@ -77,22 +77,22 @@ function fox_basic_setup($extra)
     // Detect ENTID env override before envOverride consumes it. When live
     // mode is on without a real override, the basic test runs against synthetic
     // IDs from the fixture and 4xx's. Surface this so the test can skip.
-    $entid_env_raw = getenv("RANDOMFOX_TEST_FOX_ENTID");
+    $entid_env_raw = getenv("RANDOM_FOX_TEST_FOX_ENTID");
     $idmap_overridden = $entid_env_raw !== false && str_starts_with(trim($entid_env_raw), "{");
 
     $env = Runner::env_override([
-        "RANDOMFOX_TEST_FOX_ENTID" => $idmap,
-        "RANDOMFOX_TEST_LIVE" => "FALSE",
-        "RANDOMFOX_TEST_EXPLAIN" => "FALSE",
+        "RANDOM_FOX_TEST_FOX_ENTID" => $idmap,
+        "RANDOM_FOX_TEST_LIVE" => "FALSE",
+        "RANDOM_FOX_TEST_EXPLAIN" => "FALSE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
-        $env["RANDOMFOX_TEST_FOX_ENTID"]);
+        $env["RANDOM_FOX_TEST_FOX_ENTID"]);
     if ($idmap_resolved === null) {
         $idmap_resolved = Helpers::to_map($idmap);
     }
 
-    if ($env["RANDOMFOX_TEST_LIVE"] === "TRUE") {
+    if ($env["RANDOM_FOX_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
             ],
@@ -101,13 +101,13 @@ function fox_basic_setup($extra)
         $client = new RandomFoxSDK(Helpers::to_map($merged_opts));
     }
 
-    $live = $env["RANDOMFOX_TEST_LIVE"] === "TRUE";
+    $live = $env["RANDOM_FOX_TEST_LIVE"] === "TRUE";
     return [
         "client" => $client,
         "data" => $entity_data,
         "idmap" => $idmap_resolved,
         "env" => $env,
-        "explain" => $env["RANDOMFOX_TEST_EXPLAIN"] === "TRUE",
+        "explain" => $env["RANDOM_FOX_TEST_EXPLAIN"] === "TRUE",
         "live" => $live,
         "synthetic_only" => $live && !$idmap_overridden,
         "now" => (int)(microtime(true) * 1000),

@@ -43,8 +43,8 @@ class RandomFoxTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('RANDOMFOX_TEST_LIVE');
-        $override = self::getenv('RANDOMFOX_TEST_OVERRIDE');
+        $live = self::getenv('RANDOM_FOX_TEST_LIVE');
+        $override = self::getenv('RANDOM_FOX_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class RandomFoxTestRunner
             }
         }
 
-        $explain = self::getenv('RANDOMFOX_TEST_EXPLAIN');
+        $explain = self::getenv('RANDOM_FOX_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['RANDOMFOX_TEST_EXPLAIN'] = $explain;
+            $m['RANDOM_FOX_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

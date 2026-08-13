@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from randomfox_sdk.utility.voxgig_struct import voxgig_struct as vs
 from randomfox_sdk import RandomFoxSDK
-from core import helpers
+from randomfox_sdk.core import helpers
 from test import runner
 
 
@@ -56,11 +56,11 @@ def _fox_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "RANDOMFOX_TEST_FOX_ENTID": {},
-        "RANDOMFOX_TEST_LIVE": "FALSE",
+        "RANDOM_FOX_TEST_FOX_ENTID": {},
+        "RANDOM_FOX_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("RANDOMFOX_TEST_LIVE") == "TRUE"
+    live = env.get("RANDOM_FOX_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

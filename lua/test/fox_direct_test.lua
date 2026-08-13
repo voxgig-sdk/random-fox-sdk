@@ -60,11 +60,11 @@ function fox_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["RANDOMFOX_TEST_FOX_ENTID"] = {},
-    ["RANDOMFOX_TEST_LIVE"] = "FALSE",
+    ["RANDOM_FOX_TEST_FOX_ENTID"] = {},
+    ["RANDOM_FOX_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["RANDOMFOX_TEST_LIVE"] == "TRUE"
+  local live = env["RANDOM_FOX_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

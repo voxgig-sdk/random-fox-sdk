@@ -34,7 +34,7 @@ client = RandomFoxSDK.new
 
 ```ruby
 begin
-  # load returns the bare Fox record (raises on error).
+  # load returns the ENTITY — call data_get for the Fox record (raises on error).
   fox = client.Fox.load()
   puts fox
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = RandomFoxSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 fox = client.Fox.load()
 puts fox
 ```
@@ -266,7 +267,7 @@ Create an instance: `fox = client.Fox`
 #### Example: Load
 
 ```ruby
-# load returns the bare Fox record (raises on error).
+# load returns the ENTITY — call data_get for the Fox record (raises on error).
 fox = client.Fox.load()
 ```
 

@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = RandomFoxSDK.test()
 
 const fox = await client.Fox().load()
-// fox is a bare entity populated with mock response data
+// fox is the entity, populated with mock response data
+// — call fox.data() for the record itself
 console.log(fox)
 ```
 

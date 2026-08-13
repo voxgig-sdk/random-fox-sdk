@@ -23,8 +23,8 @@ module RandomFoxTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("RANDOMFOX_TEST_LIVE")
-    override = getenv("RANDOMFOX_TEST_OVERRIDE")
+    live = getenv("RANDOM_FOX_TEST_LIVE")
+    override = getenv("RANDOM_FOX_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module RandomFoxTestRunner
       end
     end
 
-    explain = getenv("RANDOMFOX_TEST_EXPLAIN")
-    m["RANDOMFOX_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("RANDOM_FOX_TEST_EXPLAIN")
+    m["RANDOM_FOX_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

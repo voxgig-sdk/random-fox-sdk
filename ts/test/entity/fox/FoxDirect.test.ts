@@ -19,11 +19,15 @@ import {
 describe('FoxDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when RANDOMFOX_TEST_LIVE=TRUE.
-  afterEach(liveDelay('RANDOMFOX_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when RANDOM_FOX_TEST_LIVE=TRUE.
+  afterEach(liveDelay('RANDOM_FOX_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new RandomFoxSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -72,17 +76,17 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'RANDOMFOX_TEST_FOX_ENTID': {},
-    'RANDOMFOX_TEST_LIVE': 'FALSE',
+    'RANDOM_FOX_TEST_FOX_ENTID': {},
+    'RANDOM_FOX_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.RANDOMFOX_TEST_LIVE
+  const live = 'TRUE' === env.RANDOM_FOX_TEST_LIVE
 
   if (live) {
     const client = new RandomFoxSDK({
     })
 
-    let idmap: any = env['RANDOMFOX_TEST_FOX_ENTID']
+    let idmap: any = env['RANDOM_FOX_TEST_FOX_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

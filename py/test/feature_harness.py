@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import RandomFoxControl
-from core.error import RandomFoxError
-from core.result import RandomFoxResult
-from core.spec import RandomFoxSpec
+from randomfox_sdk.config import make_config
+from randomfox_sdk.features import _make_feature
+from randomfox_sdk.core.control import RandomFoxControl
+from randomfox_sdk.core.error import RandomFoxError
+from randomfox_sdk.core.result import RandomFoxResult
+from randomfox_sdk.core.spec import RandomFoxSpec
 
 
 # True when this SDK was generated with the named feature.

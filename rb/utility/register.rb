@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ RandomFoxUtility.registrar = ->(u) {
   u.prepare_params = RandomFoxUtilities::PrepareParams
   u.prepare_path = RandomFoxUtilities::PreparePath
   u.prepare_query = RandomFoxUtilities::PrepareQuery
+  u.graphql_body = RandomFoxUtilities::GraphqlBody
+  u.graphql_errors = RandomFoxUtilities::GraphqlErrors
   u.result_basic = RandomFoxUtilities::ResultBasic
   u.result_body = RandomFoxUtilities::ResultBody
   u.result_headers = RandomFoxUtilities::ResultHeaders
