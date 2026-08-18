@@ -40,7 +40,7 @@ class RandomFoxSDK
         $utility = new RandomFoxUtility();
         $this->_utility = $utility;
 
-        $config = RandomFoxConfig::make_config();
+        $config = RandomFoxConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

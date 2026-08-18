@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://randomfox.ca',
+    base: "https://randomfox.ca",
 
     headers: {
       "content-type": "application/json"
@@ -55,18 +55,14 @@ class Config {
     "fox": {
       "fields": [
         {
-          "active": true,
           "name": "image",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "link",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 1
+          "type": "`$STRING`"
         }
       ],
       "name": "fox",
@@ -76,7 +72,6 @@ class Config {
           "name": "load",
           "points": [
             {
-              "active": true,
               "args": {},
               "kind": "http",
               "method": "GET",
@@ -88,11 +83,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "load"
+          ]
         }
       },
       "relations": {

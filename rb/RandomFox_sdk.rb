@@ -28,7 +28,7 @@ class RandomFoxSDK
     utility = RandomFoxUtility.new
     @_utility = utility
 
-    config = RandomFoxConfig.make_config
+    config = RandomFoxConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
