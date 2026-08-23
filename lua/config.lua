@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "RandomFox",
+      slug = "random-fox",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -30,11 +33,13 @@ local function make_config()
           {
             ["name"] = "image",
             ["req"] = true,
+            ["short"] = "URL of the random fox image",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "link",
             ["req"] = true,
+            ["short"] = "Link to the fox image page",
             ["type"] = "`$STRING`",
           },
         },

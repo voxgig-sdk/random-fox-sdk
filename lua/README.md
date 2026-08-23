@@ -225,8 +225,8 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `image` |  |
-| `link` |  |
+| `image` | URL of the random fox image |
+| `link` | Link to the fox image page |
 
 Operations: Load.
 
@@ -251,8 +251,8 @@ Create an instance: `local fox = client:Fox(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `image` | `string` |  |
-| `link` | `string` |  |
+| `image` | `string` | URL of the random fox image |
+| `link` | `string` | Link to the fox image page |
 
 #### Example: Load
 

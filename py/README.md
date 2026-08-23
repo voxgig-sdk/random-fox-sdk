@@ -241,8 +241,8 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `image` |  |
-| `link` |  |
+| `image` | URL of the random fox image |
+| `link` | Link to the fox image page |
 
 Operations: Load.
 
@@ -267,8 +267,8 @@ Create an instance: `fox = client.Fox()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `image` | `str` |  |
-| `link` | `str` |  |
+| `image` | `str` | URL of the random fox image |
+| `link` | `str` | Link to the fox image page |
 
 #### Example: Load
 

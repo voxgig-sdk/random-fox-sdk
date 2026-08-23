@@ -235,8 +235,8 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `image` |  |
-| `link` |  |
+| `image` | URL of the random fox image |
+| `link` | Link to the fox image page |
 
 Operations: Load.
 
@@ -261,8 +261,8 @@ Create an instance: `fox = client.Fox`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `image` | `String` |  |
-| `link` | `String` |  |
+| `image` | `String` | URL of the random fox image |
+| `link` | `String` | Link to the fox image page |
 
 #### Example: Load
 

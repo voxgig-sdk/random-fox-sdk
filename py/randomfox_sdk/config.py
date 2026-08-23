@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "RandomFox",
+            "slug": "random-fox",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -51,11 +54,13 @@ def make_config():
           {
             "name": "image",
             "req": True,
+            "short": "URL of the random fox image",
             "type": "`$STRING`",
           },
           {
             "name": "link",
             "req": True,
+            "short": "Link to the fox image page",
             "type": "`$STRING`",
           },
         ],

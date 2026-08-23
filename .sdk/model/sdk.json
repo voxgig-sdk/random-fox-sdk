@@ -36,12 +36,14 @@
               "active": true,
               "name": "image",
               "req": true,
+              "short": "URL of the random fox image",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "link",
               "req": true,
+              "short": "Link to the fox image page",
               "type": "`$STRING`"
             }
           ],

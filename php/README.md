@@ -245,8 +245,8 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `image` |  |
-| `link` |  |
+| `image` | URL of the random fox image |
+| `link` | Link to the fox image page |
 
 Operations: Load.
 
@@ -271,8 +271,8 @@ Create an instance: `$fox = $client->Fox();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `image` | `string` |  |
-| `link` | `string` |  |
+| `image` | `string` | URL of the random fox image |
+| `link` | `string` | Link to the fox image page |
 
 #### Example: Load
 

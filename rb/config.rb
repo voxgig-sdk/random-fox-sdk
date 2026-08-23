@@ -19,6 +19,9 @@ module RandomFoxConfig
     {
       "main" => {
         "name" => "RandomFox",
+        "slug" => "random-fox",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -42,11 +45,13 @@ module RandomFoxConfig
             {
               "name" => "image",
               "req" => true,
+              "short" => "URL of the random fox image",
               "type" => "`$STRING`",
             },
             {
               "name" => "link",
               "req" => true,
+              "short" => "Link to the fox image page",
               "type" => "`$STRING`",
             },
           ],

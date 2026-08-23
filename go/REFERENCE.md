@@ -98,8 +98,8 @@ fmt.Println(fox.GetName()) // "fox"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `image` | `string` | Yes |  |
-| `link` | `string` | Yes |  |
+| `image` | `string` | Yes | URL of the random fox image |
+| `link` | `string` | Yes | Link to the fox image page |
 
 ### Operations
 

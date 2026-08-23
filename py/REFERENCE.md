@@ -87,8 +87,8 @@ fox = client.Fox()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `image` | `str` | Yes |  |
-| `link` | `str` | Yes |  |
+| `image` | `str` | Yes | URL of the random fox image |
+| `link` | `str` | Yes | Link to the fox image page |
 
 ### Operations
 
