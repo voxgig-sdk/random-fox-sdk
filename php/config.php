@@ -42,6 +42,7 @@ class RandomFoxConfig
           'options' => [
             'active' => false,
           ],
+          'transport' => 'base',
         ],
             ],
             "options" => [
