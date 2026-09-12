@@ -58,12 +58,14 @@ class RandomFoxConfig
         'fox' => [
           'fields' => [
             [
+              'format' => 'uri',
               'name' => 'image',
               'req' => true,
               'short' => 'URL of the random fox image',
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'link',
               'req' => true,
               'short' => 'Link to the fox image page',
@@ -81,13 +83,18 @@ class RandomFoxConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/floof',
-                  'parts' => [
-                    'floof',
+                  'segments' => [
+                    [
+                      'lit' => 'floof',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'floof',
                   ],
                 ],
               ],

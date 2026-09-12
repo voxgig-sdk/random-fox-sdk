@@ -32,12 +32,14 @@ local function make_config()
       ["fox"] = {
         ["fields"] = {
           {
+            ["format"] = "uri",
             ["name"] = "image",
             ["req"] = true,
             ["short"] = "URL of the random fox image",
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "link",
             ["req"] = true,
             ["short"] = "Link to the fox image page",
@@ -55,13 +57,18 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/floof",
-                ["parts"] = {
-                  "floof",
+                ["segments"] = {
+                  {
+                    ["lit"] = "floof",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "floof",
                 },
               },
             },

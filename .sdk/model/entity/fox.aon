@@ -6,12 +6,14 @@ main: kit: entity: fox: {
 
   fields: [
     {
+      format: "uri"
       name: "image"
       req: true
       short: "URL of the random fox image"
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "link"
       req: true
       short: "Link to the fox image page"
@@ -27,8 +29,10 @@ main: kit: entity: fox: {
         {
           method: "GET"
           orig: "/floof"
-          parts: [
-            "floof"
+          segments: [
+            {
+              lit: "floof"
+            }
           ]
           transform: {
             req: "`reqdata`"
