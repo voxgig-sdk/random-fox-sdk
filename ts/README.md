@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { RandomFoxSDK } from '@voxgig-sdk/random-fox'
+import { RandomFoxSDK } from '@voxgig-sdk/random-fox-sdk'
 
 const client = new RandomFoxSDK()
 ```
@@ -403,7 +403,7 @@ random-fox/
 Import the SDK from the package root:
 
 ```ts
-import { RandomFoxSDK } from '@voxgig-sdk/random-fox'
+import { RandomFoxSDK } from '@voxgig-sdk/random-fox-sdk'
 ```
 
 ### Entity state

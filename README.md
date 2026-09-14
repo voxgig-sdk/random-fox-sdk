@@ -105,7 +105,7 @@ local result, err = client:Fox():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/random-fox` | publish pending — [install from git tag](https://github.com/voxgig-sdk/random-fox-sdk/releases) |
+| TypeScript | `@voxgig-sdk/random-fox-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/random-fox-sdk/releases) |
 | Python | `voxgig-sdk-random-fox` | publish pending — [install from git tag](https://github.com/voxgig-sdk/random-fox-sdk/releases) |
 | PHP | `voxgig-sdk/random-fox` | publish pending — [install from git tag](https://github.com/voxgig-sdk/random-fox-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/random-fox-sdk/go` | `go get github.com/voxgig-sdk/random-fox-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Fox():load()
 ### TypeScript
 
 ```ts
-import { RandomFoxSDK } from '@voxgig-sdk/random-fox'
+import { RandomFoxSDK } from '@voxgig-sdk/random-fox-sdk'
 
 const client = new RandomFoxSDK()
 
