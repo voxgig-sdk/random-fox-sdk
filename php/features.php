@@ -4,7 +4,10 @@ declare(strict_types=1);
 // RandomFox SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class RandomFoxFeatures
@@ -14,8 +17,14 @@ class RandomFoxFeatures
         switch ($name) {
             case "base":
                 return new RandomFoxBaseFeature();
+            case "ratelimit":
+                return new RandomFoxRatelimitFeature();
+            case "retry":
+                return new RandomFoxRetryFeature();
             case "test":
                 return new RandomFoxTestFeature();
+            case "timeout":
+                return new RandomFoxTimeoutFeature();
             default:
                 return new RandomFoxBaseFeature();
         }
@@ -31,7 +40,10 @@ class RandomFoxFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

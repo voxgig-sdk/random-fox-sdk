@@ -1,12 +1,18 @@
 # RandomFox SDK feature factory
 
 from randomfox_sdk.feature.base_feature import RandomFoxBaseFeature
+from randomfox_sdk.feature.ratelimit_feature import RandomFoxRatelimitFeature
+from randomfox_sdk.feature.retry_feature import RandomFoxRetryFeature
 from randomfox_sdk.feature.test_feature import RandomFoxTestFeature
+from randomfox_sdk.feature.timeout_feature import RandomFoxTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: RandomFoxBaseFeature(),
+    "ratelimit": lambda: RandomFoxRatelimitFeature(),
+    "retry": lambda: RandomFoxRetryFeature(),
     "test": lambda: RandomFoxTestFeature(),
+    "timeout": lambda: RandomFoxTimeoutFeature(),
 }
 
 

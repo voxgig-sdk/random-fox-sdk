@@ -27,6 +27,12 @@ main: kit: entity: fox: {
       name: "load"
       points: [
         {
+          contract: {
+            id: "GET /floof"
+            json: "{\"operationId\":\"getRandomFox\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"image\":\"https://randomfox.ca/images/42.jpg\",\"link\":\"https://randomfox.ca/?i=42\"},\"schema\":{\"properties\":{\"image\":{\"description\":\"URL of the random fox image\",\"example\":\"https://randomfox.ca/images/1.jpg\",\"format\":\"uri\",\"type\":\"string\"},\"link\":{\"description\":\"Link to the fox image page\",\"example\":\"https://randomfox.ca/?i=1\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"image\",\"link\"],\"type\":\"object\"}}},\"description\":\"Successful response with random fox image data\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/floof"
           segments: [
