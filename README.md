@@ -105,12 +105,12 @@ local result, err = client:Fox():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/random-fox-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/random-fox-sdk/releases) |
-| Python | `voxgig-sdk-random-fox` | publish pending — [install from git tag](https://github.com/voxgig-sdk/random-fox-sdk/releases) |
-| PHP | `voxgig-sdk/random-fox` | publish pending — [install from git tag](https://github.com/voxgig-sdk/random-fox-sdk/releases) |
+| TypeScript | `@voxgig-sdk/random-fox-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/random-fox-sdk/tags) |
+| Python | `voxgig-sdk-random-fox` | publish pending — [install from git tag](https://github.com/voxgig-sdk/random-fox-sdk/tags) |
+| PHP | `voxgig-sdk/random-fox` | publish pending — [install from git tag](https://github.com/voxgig-sdk/random-fox-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/random-fox-sdk/go` | `go get github.com/voxgig-sdk/random-fox-sdk/go@latest` |
-| Ruby | `voxgig-sdk-random-fox` | publish pending — [install from git tag](https://github.com/voxgig-sdk/random-fox-sdk/releases) |
-| Lua | `voxgig-sdk-random-fox` | publish pending — [install from git tag](https://github.com/voxgig-sdk/random-fox-sdk/releases) |
+| Ruby | `voxgig-sdk-random-fox` | publish pending — [install from git tag](https://github.com/voxgig-sdk/random-fox-sdk/tags) |
+| Lua | `voxgig-sdk-random-fox` | publish pending — [install from git tag](https://github.com/voxgig-sdk/random-fox-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/random-fox-sdk/go-cli` | `go install github.com/voxgig-sdk/random-fox-sdk/go-cli/cmd/random-fox@latest` |
 | Go MCP server | `github.com/voxgig-sdk/random-fox-sdk/go-mcp` | `go get github.com/voxgig-sdk/random-fox-sdk/go-mcp@latest` |
 
