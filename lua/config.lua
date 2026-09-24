@@ -86,18 +86,20 @@ local function make_config()
       ["fox"] = {
         ["fields"] = {
           {
-            ["format"] = "uri",
             ["name"] = "image",
+            ["title"] = "Image",
+            ["type"] = "`$STRING`",
             ["req"] = true,
             ["short"] = "URL of the random fox image",
-            ["type"] = "`$STRING`",
+            ["format"] = "uri",
           },
           {
-            ["format"] = "uri",
             ["name"] = "link",
+            ["title"] = "Link",
+            ["type"] = "`$STRING`",
             ["req"] = true,
             ["short"] = "Link to the fox image page",
-            ["type"] = "`$STRING`",
+            ["format"] = "uri",
           },
         },
         ["name"] = "fox",
@@ -107,7 +109,6 @@ local function make_config()
             ["name"] = "load",
             ["points"] = {
               {
-                ["args"] = {},
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/floof",
@@ -116,14 +117,16 @@ local function make_config()
                     ["lit"] = "floof",
                   },
                 },
-                ["select"] = {},
+                ["parts"] = {
+                  "floof",
+                },
+                ["rename"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["parts"] = {
-                  "floof",
-                },
+                ["args"] = {},
+                ["select"] = {},
               },
             },
           },

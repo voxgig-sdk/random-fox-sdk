@@ -24,30 +24,98 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "fox": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "format": "uri",
-              "name": "image",
-              "req": true,
-              "short": "URL of the random fox image",
-              "type": "`$STRING`"
+          "fields": {
+            "image": {
+              "a": true,
+              "fo": "uri",
+              "h": "Image",
+              "n": "image",
+              "r": true,
+              "sh": "URL of the random fox image",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "link",
-              "req": true,
-              "short": "Link to the fox image page",
-              "type": "`$STRING`"
+            "link": {
+              "a": true,
+              "fo": "uri",
+              "h": "Link",
+              "n": "link",
+              "r": true,
+              "sh": "Link to the fox image page",
+              "t": "`$STRING`"
             }
-          ],
+          },
           "name": "fox",
           "op": {
             "load": {
@@ -55,24 +123,24 @@
               "name": "load",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "GET /floof",
-                    "json": "{\"operationId\":\"getRandomFox\",\"parameters\":[],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"image\":\"https://randomfox.ca/images/42.jpg\",\"link\":\"https://randomfox.ca/?i=42\"},\"schema\":{\"properties\":{\"image\":{\"description\":\"URL of the random fox image\",\"example\":\"https://randomfox.ca/images/1.jpg\",\"format\":\"uri\",\"type\":\"string\"},\"link\":{\"description\":\"Link to the fox image page\",\"example\":\"https://randomfox.ca/?i=1\",\"format\":\"uri\",\"type\":\"string\"}},\"required\":[\"image\",\"link\"],\"type\":\"object\"}}},\"description\":\"Successful response with random fox image data\"}},\"securitySource\":\"unspecified\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "GET",
-                  "orig": "/floof",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "GET",
+                  "o": "/floof",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "floof"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -501,17 +569,17 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "fox_ref01",
                 "srcdatavar": "fox_ref01_data",
                 "suffix": "_dt0"
               },
-              "match": {},
-              "op": "load",
-              "spec": [],
-              "valid": [
+              "m": {},
+              "o": "load",
+              "s": [],
+              "v": [
                 {
                   "apply": "TextFieldMark",
                   "def": {

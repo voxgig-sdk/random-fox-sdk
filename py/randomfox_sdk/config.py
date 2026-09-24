@@ -115,18 +115,20 @@ def make_config():
       "fox": {
         "fields": [
           {
-            "format": "uri",
             "name": "image",
+            "title": "Image",
+            "type": "`$STRING`",
             "req": True,
             "short": "URL of the random fox image",
-            "type": "`$STRING`",
+            "format": "uri",
           },
           {
-            "format": "uri",
             "name": "link",
+            "title": "Link",
+            "type": "`$STRING`",
             "req": True,
             "short": "Link to the fox image page",
-            "type": "`$STRING`",
+            "format": "uri",
           },
         ],
         "name": "fox",
@@ -136,7 +138,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/floof",
@@ -145,14 +146,16 @@ def make_config():
                     "lit": "floof",
                   },
                 ],
-                "select": {},
+                "parts": [
+                  "floof",
+                ],
+                "rename": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "parts": [
-                  "floof",
-                ],
+                "args": {},
+                "select": {},
               },
             ],
           },

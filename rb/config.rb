@@ -98,18 +98,20 @@ module RandomFoxConfig
         "fox" => {
           "fields" => [
             {
-              "format" => "uri",
               "name" => "image",
+              "title" => "Image",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "URL of the random fox image",
-              "type" => "`$STRING`",
+              "format" => "uri",
             },
             {
-              "format" => "uri",
               "name" => "link",
+              "title" => "Link",
+              "type" => "`$STRING`",
               "req" => true,
               "short" => "Link to the fox image page",
-              "type" => "`$STRING`",
+              "format" => "uri",
             },
           ],
           "name" => "fox",
@@ -119,7 +121,6 @@ module RandomFoxConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {},
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/floof",
@@ -128,14 +129,16 @@ module RandomFoxConfig
                       "lit" => "floof",
                     },
                   ],
-                  "select" => {},
+                  "parts" => [
+                    "floof",
+                  ],
+                  "rename" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "parts" => [
-                    "floof",
-                  ],
+                  "args" => {},
+                  "select" => {},
                 },
               ],
             },

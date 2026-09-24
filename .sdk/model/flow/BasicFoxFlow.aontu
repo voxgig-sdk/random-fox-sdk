@@ -1,0 +1,28 @@
+# BasicFoxFlow
+
+main: kit: flow: BasicFoxFlow:
+{
+  entity: "fox",
+  kind: "basic",
+  name: "BasicFoxFlow",
+  step: [
+    {
+      i: {
+        ref: "fox_ref01",
+        srcdatavar: "fox_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-fox_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicFoxFlow"
+}

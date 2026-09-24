@@ -90,18 +90,20 @@ func MakeConfig() map[string]any {
 			"fox": map[string]any{
 				"fields": []any{
 					map[string]any{
-						"format": "uri",
 						"name": "image",
+						"title": "Image",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "URL of the random fox image",
-						"type": "`$STRING`",
+						"format": "uri",
 					},
 					map[string]any{
-						"format": "uri",
 						"name": "link",
+						"title": "Link",
+						"type": "`$STRING`",
 						"req": true,
 						"short": "Link to the fox image page",
-						"type": "`$STRING`",
+						"format": "uri",
 					},
 				},
 				"name": "fox",
@@ -111,7 +113,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/floof",
@@ -120,14 +121,16 @@ func MakeConfig() map[string]any {
 										"lit": "floof",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"floof",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"floof",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},

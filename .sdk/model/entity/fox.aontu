@@ -1,0 +1,55 @@
+# Entity: fox
+
+main: kit: entity: fox: {
+
+  alias: field: {}
+
+  fields: {
+    image: {
+      fo: "uri"
+      h: "Image"
+      n: "image"
+      r: true
+      sh: "URL of the random fox image"
+      t: "`$STRING`"
+    }
+    link: {
+      fo: "uri"
+      h: "Link"
+      n: "link"
+      r: true
+      sh: "Link to the fox image page"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "fox"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /floof"
+            source: "openapi3"
+            version: 2
+          }
+          m: "GET"
+          o: "/floof"
+          s: [
+            {
+              lit: "floof"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

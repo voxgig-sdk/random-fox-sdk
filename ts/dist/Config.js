@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -113,18 +106,20 @@ class Config {
         "fox": {
             "fields": [
                 {
-                    "format": "uri",
                     "name": "image",
+                    "title": "Image",
+                    "type": "`$STRING`",
                     "req": true,
                     "short": "URL of the random fox image",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 },
                 {
-                    "format": "uri",
                     "name": "link",
+                    "title": "Link",
+                    "type": "`$STRING`",
                     "req": true,
                     "short": "Link to the fox image page",
-                    "type": "`$STRING`"
+                    "format": "uri"
                 }
             ],
             "name": "fox",
@@ -134,7 +129,6 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "GET",
                             "orig": "/floof",
@@ -143,14 +137,16 @@ class Config {
                                     "lit": "floof"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "floof"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "floof"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
