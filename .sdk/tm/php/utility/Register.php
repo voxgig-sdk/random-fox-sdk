@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 RandomFoxUtility::setRegistrar(function (RandomFoxUtility $u): void {
     $u->clean = [RandomFoxClean::class, 'call'];
+    $u->clean_add = [RandomFoxClean::class, 'add'];
+    $u->clean_explain = [RandomFoxDone::class, 'clean_explain'];
     $u->done = [RandomFoxDone::class, 'call'];
     $u->make_error = [RandomFoxMakeError::class, 'call'];
     $u->feature_add = [RandomFoxFeatureAdd::class, 'call'];

@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 RandomFoxUtility.registrar = ->(u) {
   u.clean = RandomFoxUtilities::Clean
+  u.clean_add = RandomFoxUtilities::CleanAdd
+  u.clean_explain = RandomFoxUtilities::CleanExplain
   u.done = RandomFoxUtilities::Done
   u.make_error = RandomFoxUtilities::MakeError
   u.feature_add = RandomFoxUtilities::FeatureAdd
