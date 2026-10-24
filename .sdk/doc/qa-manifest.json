@@ -3,5 +3,14 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Link to the fox image page",
+      "Production server",
+      "Shows a random fox. A simple API that returns random fox images.",
+      "Successful response with random fox image data",
+      "URL of the random fox image"
+    ]
+  }
 }
